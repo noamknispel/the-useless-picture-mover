@@ -30,3 +30,15 @@ body {
 .header-row {
   margin: 10px;
 }
+.image-container {
+  width: 100em;
+  height: 30em;
+  border: 2px solid #ff0066;
+  margin: 10px auto;
+  position: relative;
+  background: #cbcbcb;
+}
+.image-container img {
+  width: 200px;
+  height: 200px;
+}

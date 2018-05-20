@@ -4,6 +4,7 @@ import { Component } from 'react'
 
 class ProtectedComponent extends Component {
   componentWillMount() {
+    console.log('1')
     let isLoggedIn = window.localStorage.getItem('loggedIn')
     isLoggedIn = String(isLoggedIn) === 'true'
     if(!isLoggedIn) this.props.history.push('/login')

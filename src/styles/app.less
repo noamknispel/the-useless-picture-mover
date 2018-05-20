@@ -6,11 +6,10 @@ body {
 }
 
 .login-form-container {
-  // background: #eeeeee;
   background: darken(@background, 5%);
   padding: 20px;
   margin: 40px 0;
-  box-shadow: 1px #ff;
+  box-shadow: 0px 0px 15px 0px @pink;
   -webkit-box-shadow: 0px 0px 15px 0px @pink;
   -moz-box-shadow: 0px 0px 15px 0px @pink;
   box-shadow: 0px 0px 15px 0px @pink;
@@ -23,6 +22,10 @@ body {
   .btn {
     width: 100%;
   }
+}
+
+.form-control:focus {
+  border-color: @pink;
 }
 
 .btn-default {
@@ -39,4 +42,20 @@ body {
 
 .header-row {
   margin: 10px;
+}
+
+.image-container {
+  width: 100em;
+  height: 30em;
+  border: 2px solid @pink;
+  margin: 10px auto;
+  position: relative;
+  background: darken(@background, 10%);
+
+  img {
+    @size: 200px;
+    width: @size;
+    height: @size;
+    cursor: move;
+  }
 }
