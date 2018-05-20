@@ -30,7 +30,8 @@ class LoginForm extends Component {
     return (
       <div className="row">
         <div className="login col-md-4 col-md-offset-4">
-        <form onSubmit={this.handleSubmit}>
+        <form className="login-form-container" onSubmit={this.handleSubmit}>
+          <h3><span>Hey there!</span> Please login...</h3>
           <div className="form-group">
             <input type="email" className="form-control" name="email" placeholder="Email" onChange={this.handleChange}/>
           </div>
