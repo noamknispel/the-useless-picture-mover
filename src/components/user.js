@@ -4,7 +4,7 @@ import ProtectedComponent from './../helpers/protected_component'
 import PictureEdit from './picture_edit'
 
 const defaultLocation = { x: 0, y: 0 }
-const localStorageKey = 'pictureLocation' // future implemntation thought - get key from config?
+const localStorageKey = 'pictureLocation' // future implementation thought - get key from config?
 
 class User extends ProtectedComponent {
   constructor(props) {
@@ -16,6 +16,9 @@ class User extends ProtectedComponent {
 
   componentWillMount() {
     super.componentWillMount()
+    // This method assuming the location of the picture is coming from isolated call to the server,
+    // Another option is: the server will return the last location when user is login and then the
+    // location will pass by the App component.
     const location = JSON.parse(window.localStorage.getItem(localStorageKey))
     this.setState({ pictureLocation: location || defaultLocation })
   }
@@ -25,7 +28,9 @@ class User extends ProtectedComponent {
   }
 
   handlePictureLocationChanged = (pictureLocation) => {
-    this.setState({ pictureLocation })
+    // Send to server
+    this.setState({ pictureLocation }) // update anyway, just for the user exprience
+    // if getting any error from the server, return to the previous location and show an error notification
     window.localStorage.setItem(localStorageKey, JSON.stringify(pictureLocation))
   }
 

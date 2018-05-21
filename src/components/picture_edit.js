@@ -6,7 +6,7 @@ class PictureEdit extends Component {
     super(props)
     this.state = {
       pictureLocation: this.props.pictureLocation,
-      pictureUrl: 'https://www.atomix.com.au/media/2015/06/atomix_user31.png' // Hardcodded for now - in future implemntation will change.
+      pictureUrl: 'https://www.atomix.com.au/media/2015/06/atomix_user31.png' // Hardcodded for now - in future implementation will change.
     }
   }
 

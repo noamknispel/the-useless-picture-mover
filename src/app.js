@@ -9,8 +9,11 @@ const loggedInKey = 'loggedIn' // This key is used in ProtectedComponent as well
 
 class App extends Component {
   handleLogin = (history) => {
+    // Future implementation - create request to the server for validation
+    // if response valid:
     window.localStorage.setItem(loggedInKey, true)
     history.push('/user')
+    // catch and handle errors here
   }
 
   handleLogout = (history) => {
