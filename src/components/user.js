@@ -4,6 +4,7 @@ import ProtectedComponent from './../helpers/protected_component'
 import PictureEdit from './picture_edit'
 
 const defaultLocation = { x: 0, y: 0 }
+const localStorageKey = 'pictureLocation' // future implemntation thought - get key from config?
 
 class User extends ProtectedComponent {
   constructor(props) {
@@ -15,7 +16,7 @@ class User extends ProtectedComponent {
 
   componentWillMount() {
     super.componentWillMount()
-    const location = JSON.parse(window.localStorage.getItem('pictureLocation'))
+    const location = JSON.parse(window.localStorage.getItem(localStorageKey))
     this.setState({ pictureLocation: location || defaultLocation })
   }
 
@@ -23,9 +24,9 @@ class User extends ProtectedComponent {
     this.props.onLogout(this.props.history)
   }
 
-  handleUpdatePictureLocation = (pictureLocation) => {
+  handlePictureLocationChanged = (pictureLocation) => {
     this.setState({ pictureLocation })
-    window.localStorage.setItem('pictureLocation', JSON.stringify(pictureLocation))
+    window.localStorage.setItem(localStorageKey, JSON.stringify(pictureLocation))
   }
 
   render() {
@@ -41,7 +42,7 @@ class User extends ProtectedComponent {
           </div>
         </div>
         <div>
-          <PictureEdit onLocationUpdated={this.handleUpdatePictureLocation} pictureLocation={this.state.pictureLocation}/>
+          <PictureEdit onLocationChanged={this.handlePictureLocationChanged} pictureLocation={this.state.pictureLocation}/>
         </div>
       </div>
     )

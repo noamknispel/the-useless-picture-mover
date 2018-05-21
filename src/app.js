@@ -5,14 +5,16 @@ import './styles/app.css'
 import LoginForm from './components/login_form'
 import User from './components/user'
 
+const loggedInKey = 'loggedIn' // This key is used in ProtectedComponent as well, need to move it to such of config
+
 class App extends Component {
   handleLogin = (history) => {
-    window.localStorage.setItem('loggedIn', true)
+    window.localStorage.setItem(loggedInKey, true)
     history.push('/user')
   }
 
   handleLogout = (history) => {
-    window.localStorage.setItem('loggedIn', false)
+    window.localStorage.setItem(loggedInKey, false)
     history.push('/login')
   }
 

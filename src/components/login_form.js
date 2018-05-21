@@ -31,14 +31,14 @@ class LoginForm extends Component {
       <div className="row">
         <div className="login col-md-4 col-md-offset-4">
         <form className="login-form-container" onSubmit={this.handleSubmit}>
-          <h3><span>Hey there!</span> Please login...</h3>
+          <h3><span className="title">Hey there!</span> Please login...</h3>
           <div className="form-group">
             <input type="email" className="form-control" name="email" placeholder="Email" onChange={this.handleChange}/>
           </div>
           <div className="form-group">
             <input type="password" className="form-control" name="password" placeholder="Password" onChange={this.handleChange}/>
           </div>
-          <button type="submit" className="btn btn-default submit-button" disabled={this.isValid()}>Submit</button>
+          <button type="submit" className="btn btn-default submit-button" disabled={this.isValid()}>Take me in</button>
           </form>
         </div>
       </div>

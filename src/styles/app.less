@@ -1,18 +1,22 @@
-@import "colors";
+@import "./colors";
 
 body {
   background: @background;
   color: @text-color;
 }
 
+.title {
+  color: @primary-color;
+}
+
 .login-form-container {
   background: darken(@background, 5%);
   padding: 20px;
   margin: 40px 0;
-  box-shadow: 0px 0px 15px 0px @pink;
-  -webkit-box-shadow: 0px 0px 15px 0px @pink;
-  -moz-box-shadow: 0px 0px 15px 0px @pink;
-  box-shadow: 0px 0px 15px 0px @pink;
+  box-shadow: 0px 0px 15px 0px @primary-color;
+  -webkit-box-shadow: 0px 0px 15px 0px @primary-color;
+  -moz-box-shadow: 0px 0px 15px 0px @primary-color;
+  box-shadow: 0px 0px 15px 0px @primary-color;
   border-radius: 10px;
 
   h3 {
@@ -25,11 +29,11 @@ body {
 }
 
 .form-control:focus {
-  border-color: @pink;
+  border-color: @primary-color;
 }
 
 .btn-default {
-  @background: @pink;
+  @background: @primary-color;
   @color: #ffffff;
   background: @background;
   color: @color;
@@ -47,7 +51,7 @@ body {
 .image-container {
   width: 100em;
   height: 30em;
-  border: 2px solid @pink;
+  border: 2px solid @primary-color;
   margin: 10px auto;
   position: relative;
   background: darken(@background, 10%);

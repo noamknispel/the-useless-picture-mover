@@ -2,11 +2,13 @@ body {
   background: #e4e4e4;
   color: #484848;
 }
+.title {
+  color: #ff0066;
+}
 .login-form-container {
   background: #d7d7d7;
   padding: 20px;
   margin: 40px 0;
-  box-shadow: 1px #ff;
   -webkit-box-shadow: 0px 0px 15px 0px #ff0066;
   -moz-box-shadow: 0px 0px 15px 0px #ff0066;
   box-shadow: 0px 0px 15px 0px #ff0066;
@@ -17,6 +19,9 @@ body {
 }
 .login-form-container .btn {
   width: 100%;
+}
+.form-control:focus {
+  border-color: #ff0066;
 }
 .btn-default {
   background: #ff0066;
@@ -41,4 +46,5 @@ body {
 .image-container img {
   width: 200px;
   height: 200px;
+  cursor: move;
 }
